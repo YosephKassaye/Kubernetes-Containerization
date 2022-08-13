@@ -135,3 +135,53 @@ Perform the following steps
    ~~~ 
    kubectl get svc
 6. Get loadbalacing External IP and try if the application works
+
+## Docker Volume
+If you want to update the running container to be mapped with the local volume, you can do as follows:
+~~~
+docker run --rm -it --name admin -p lp:containerport -v projectpath:/src 01a2b9cdcaf7
+Example: docker run --rm -it --name admin -p 3002:3000 -v C:\Users\Yoseph\Dropbox\_Project\_2021Yyaobe\2022\Debelo\debelo\debelo\admin:/src 01a2b9cdcaf7
+~~~
+## React APP Dockerfile
+~~~
+FROM node:16.16.0-buster
+
+WORKDIR /src
+
+COPY  package.json package.json
+COPY  package-lock.json package-lock.json
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
+~~~
+## Multi Stage Image
+This is to minimize the size of the file
+
+~~~
+FROM node:16.16.0-buster as build
+
+WORKDIR /src
+
+COPY  package.json package.json
+COPY  package-lock.json package-lock.json
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+FROM nginx:1.10-alpine as prod
+
+COPY --from=build /src/build /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
+~~~
+Now you can run the container as:
+~~~
+docker run -it --rm -p 3033:80 ID
