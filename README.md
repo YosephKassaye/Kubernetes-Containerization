@@ -27,7 +27,7 @@ If you stop the running container now, everything you have will be gone- so make
 11.	docker commit containerId username/tagName
 if you go to the image list, you will see two mages listedout. 
  <img src="assetsforredeme/imagesaftercommit.PNG"/>
- ### Now run the commited image (with other changes) 
+### Now run the commited image (with other changes) 
 12.	docker run -d -it -p sourceport:Target ImageId
 13.	docker exec -it  containerId bash
 14.	service apache2 status
