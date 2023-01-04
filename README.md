@@ -56,29 +56,28 @@ Steps:
 #### Create AKS (Azure Kubernete Service) and and run the images in it (inside pod(s)) 
 1. 	Create Kubernetes Cluster
 	Basics
-	Subscription: Free Trial
-	Resource Group: Creat New: aks-rg1
-	Kubernetes Cluster Name: aksdemo1
-	Region: (US) Central US
-	Kubernetes Version: Select what ever is latest stable version
-	Node Size: Standard DS2 v2 (Default one)
-	Node Count: 1
-	Node Pools
-•	leave to defaults
+* Subscription: Free Trial
+* Resource Group: Creat New: aks-rg1
+* Kubernetes Cluster Name: aksdemo1
+* Region: (US) Central US
+* Kubernetes Version: Select what ever is latest stable version
+* Node Size: Standard DS2 v2 (Default one)
+* Node Count: 1
+* 	Node Pools
+* 	leave to defaults
 	Authentication
-•	Authentication method: System-assigned managed identity
-•	Rest all leave to defaults
-	Networking
-	Network Configuration: Advanced
-	Network Policy: Azure
-	Rest all leave to defaults
+* 	Authentication method: System-assigned managed identity
+* 	Rest all leave to defaults	Networking
+* 	Network Configuration: Advanced
+* 	Network Policy: Azure
+* 	Rest all leave to defaults
 	Integrations
-	Azure Container Registry: None
-	leave to defaults
-	Tags
-•	leave to defaults
-	Review + Create
-•	Click on Create
+* 	Azure Container Registry: None
+* 	leave to defaults
+* 	Tags
+* 	leave to defaults
+* 	Review + Create
+* 	Click on Create
 
    #### Install Azure CLI and access  it
 Perform the following steps
